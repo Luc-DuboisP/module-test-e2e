@@ -11,18 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Install Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-      - name: Install npm dependencies
-        run: npm install
-      - name: npm init
-        run: npm init -y
-      - name: Run build task
-        run: npm run build --if-present
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v2.1.7
+      - name: Test
         env:
+          WEBSIDE: ${{ secrets.TEST_WEBSITE }}
+          LOGIN: ${{ secrets.TEST_LOGIN }}
+          PASSWORD: ${{ secrets.TEST_PASSWORD }}
+        run: run npm test
+
 
