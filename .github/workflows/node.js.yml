@@ -28,8 +28,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+    - name: test
       env:
           TESTED_WEBSITE: ${ secrets.TESTED_WEBSITE }
           TEST_LOGIN: ${ secrets.TEST_LOGIN }
           TEST_PASSWORD: ${ secrets.TEST_PASSWORD }
-    - run: npm test
+      run: npm test
