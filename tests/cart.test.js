@@ -13,6 +13,7 @@ describe("Cart features", () => {
             await btn.click()
             await page.waitForSelector('.shopping_cart_badge')
         }
+        count = await page.$eval('.shopping_cart_badge', e => e.innerHTML)
         expect(parseInt(count)).toBe(6)
     }, timeout);
 

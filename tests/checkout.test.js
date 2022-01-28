@@ -11,20 +11,18 @@ describe("Checkout process", () => {
 
     }, timeout);
 
-    test('checkout  complete', async () => {
-        await page.waitForSelector('#finish')
-        await page.click('#finish')
-        expect(page.url()).toBe('https://www.saucedemo.com/checkout-complete.html')
-    }, timeout);
-
     test('info form', async () => {
         await page.waitForSelector('#checkout')
         await page.click('#checkout')
         expect(page.url()).toBe('https://www.saucedemo.com/checkout-step-one.html')
     }, timeout);
 
-    // cette fonction est lancée avant chaque test de cette
-    // série de tests
+    // test('checkout complete', async () => {
+    //     await page.waitForSelector('#finish')
+    //     await page.click('#finish')
+    //     expect(page.url()).toBe('https://www.saucedemo.com/checkout-complete.html')
+    // }, timeout);
+
     beforeAll(async () => {
         // ouvrir un onglet dans le navigateur
         page = await global.__BROWSER__.newPage()
