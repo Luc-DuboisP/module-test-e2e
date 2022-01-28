@@ -28,7 +28,7 @@ describe("Cart features", () => {
         await page.goto(process.env.TESTED_WEBSITE);
         await page.waitForSelector('#user-name');
         await page.waitForSelector('#login-button')
-        await page.type('#user-name', process.env.TEST_LOGIN_SUCCESS);
+        await page.type('#user-name', process.env.TEST_LOGIN);
         await page.type('#password', process.env.TEST_PASSWORD);
         await page.click('#login-button')
     }, timeout);
