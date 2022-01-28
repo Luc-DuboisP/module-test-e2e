@@ -17,5 +17,3 @@ jobs:
           LOGIN: ${{ secrets.TEST_LOGIN }}
           PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: run npm test
-
-
